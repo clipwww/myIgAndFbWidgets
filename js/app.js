@@ -17,7 +17,7 @@ new Vue({
   <div class="ig-widgets">
     <ul class="ig-widgets__wrap">
       <li class="ig-widgets__item" v-for="item in pictures" :key="item.id">
-        <a :href="item.link" target="_blank" :title="item.caption ? item.caption.text: item.link">
+        <a :href="item.link" target="_blank">
           <figure v-bind:style="{ 'background-image': 'url(' + item.images.standard_resolution.url + ')' }">
             <figcaption>{{ item.caption ? item.caption.text: item.link }}</figcaption>
           </figure>

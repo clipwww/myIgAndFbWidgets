@@ -68,7 +68,7 @@ gulp.task('bundle-js', function () {
     .pipe(prodMode(uglify()))
     .pipe(rename({
       dirname: "/",
-      basename: "bundle",
+      basename: "ig-widgets.min",
       extname: ".js"
     }))
     .pipe(gulp.dest('./dist'))
