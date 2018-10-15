@@ -51,7 +51,7 @@ new Vue({
       this.pictures = pictures.slice(0, this.max);
     }
   },
-  mounted() {
+  created() {
     this.getPictures();
   }
 })
