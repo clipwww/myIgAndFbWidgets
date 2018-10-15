@@ -1,0 +1,69 @@
+.ig-widgets {
+  &, &  * {
+    box-sizing: border-box;
+    font-family: "微軟正黑體" !important;
+    font-size: 16px;
+  }
+
+  &__wrap {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 -4px;
+  }
+
+  &__item {
+    width: 33.333%;
+    padding: 4px;
+
+    figure {
+      position: relative;
+      margin: 0;
+      width: 100%;
+      height: 0;
+      padding-bottom: 100%;
+      position: relative;
+      overflow: hidden;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      &::before {
+        background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAuMzEzIDI1MC4zMTMiPiAgICA8Zz4gICAgICAgIDxwYXRoIGZpbGw9IiNmNWY1ZjUiICAgICAgICAgICAgICBkPSJtMjQ0LjE5IDIxNC42bC01NC4zNzktNTQuMzc4Yy0wLjI4OS0wLjI4OS0wLjYyOC0wLjQ5MS0wLjkzLTAuNzYgMTAuNy0xNi4yMzEgMTYuOTQ1LTM1LjY2IDE2Ljk0NS01Ni41NTQgMC01Ni44MzUtNDYuMDctMTAyLjkxLTEwMi45MS0xMDIuOTFzLTEwMi45MSA0Ni4wNzUtMTAyLjkxIDEwMi45MWMwIDU2LjgzNSA0Ni4wNzQgMTAyLjkxIDEwMi45MSAxMDIuOTEgMjAuODk1IDAgNDAuMzIzLTYuMjQ1IDU2LjU1NC0xNi45NDUgMC4yNjkgMC4zMDEgMC40NyAwLjY0IDAuNzU5IDAuOTI5bDU0LjM4IDU0LjM4YzguMTY5IDguMTY4IDIxLjQxMyA4LjE2OCAyOS41ODMgMCA4LjE3LTguMTcgOC4xNy0yMS40MiAwLjAxLTI5LjU5em0tMTQxLjI4LTQ0LjQ1Yy0zNy4xMzQgMC02Ny4yMzYtMzAuMTAyLTY3LjIzNi02Ny4yMzUgMC0zNy4xMzQgMzAuMTAzLTY3LjIzNiA2Ny4yMzYtNjcuMjM2IDM3LjEzMiAwIDY3LjIzNSAzMC4xMDMgNjcuMjM1IDY3LjIzNiAwLjAxIDM3LjEyLTMwLjEgNjcuMjMtNjcuMjMgNjcuMjN6Ii8+ICAgIDwvZz48L3N2Zz4=') no-repeat 50% 50% rgba(61,63,82,.7);
+        background-size: 25% 25%;
+        content: "";
+        height: 100%;
+        left: 0;
+        line-height: 0;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        transition: opacity .3s ease;
+        width: 100%;
+        z-index: 2;
+      }
+      
+      &:hover {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+
+    figcaption {
+      display: none;
+    }
+
+  }
+
+  &__msg {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 30px;
+    background-color: fade-out($color: black, $amount: .2);
+    color: white;
+  }
+}
