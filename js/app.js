@@ -1,3 +1,4 @@
+import '../scss/ig-widgets.scss';
 import 'babel-polyfill';
 import axios from 'axios';
 import Vue from 'vue/dist/vue.common'

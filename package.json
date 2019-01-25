@@ -1,36 +1,19 @@
 {
   "name": "my-ig-widgets",
   "devDependencies": {
-    "babel-core": "^6.26.0",
     "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "babelify": "^8.0.0",
-    "browserify": "^16.1.1",
-    "cross-env": "^5.2.0",
-    "envify": "^4.1.0",
-    "gulp": "latest",
-    "gulp-autoprefixer": "latest",
-    "gulp-babel": "^7.0.0",
-    "gulp-connect": "latest",
-    "gulp-cssmin": "^0.2.0",
-    "gulp-environments": "^0.1.2",
-    "gulp-open": "^2.0.0",
-    "gulp-sass": "latest",
-    "gulp-strip-debug": "^1.1.0",
-    "gulp-uglify": "^3.0.0",
-    "node-sass": "^4.9.4",
-    "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0"
+    "parcel": "^1.11.0",
+    "sass": "^1.16.1"
   },
   "keywords": [],
   "scripts": {
-    "dev": "cross-env NODE_ENV=development gulp",
-    "start": "cross-env NODE_ENV=production gulp"
+    "prestart": "rm -rf dist",
+    "start": "parcel index.html",
+    "prebuild": "rm -rf dist",
+    "build": "parcel build index.html"
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "vue": "^2.5.17"
+    "vue": "^2.5.22"
   }
 }
