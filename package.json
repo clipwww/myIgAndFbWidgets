@@ -10,10 +10,14 @@
     "prestart": "rm -rf dist",
     "start": "parcel index.html",
     "prebuild": "rm -rf dist",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "prestart:window": "if exist dist RMDIR dist /s /q && if exist mkdir dist /s /q",
+    "start:window": "parcel index.html",
+    "build:window": "npm run prestart:window && parcel build index.html"
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "axios-jsonp": "^1.0.2",
     "vue": "^2.5.22"
   }
 }

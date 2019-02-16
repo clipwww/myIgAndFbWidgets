@@ -1,6 +1,7 @@
 import '../scss/ig-widgets.scss';
 import 'babel-polyfill';
 import axios from 'axios';
+import jsonpAdapter from 'axios-jsonp';
 import Vue from 'vue/dist/vue.common'
 
 const service = axios.create({
@@ -43,7 +44,9 @@ new Vue({
   },
   methods: {
     async getPictures() {
-      const ret = await service.get(this.url).then(res => res.data).catch(err => err);
+      const ret = await service.get(this.url, {
+        adapter: jsonpAdapter,
+      }).then(res => res.data).catch(err => err);
       console.log(ret);
       const { data: pictures = [] } = ret;
       if(!pictures.length) {
