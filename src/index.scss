@@ -1,0 +1,144 @@
+$breakpoints: (
+  'sm': 'screen and (min-width: 768px)', 
+  'md': 'screen and (min-width: 992px)', 
+  'lg': 'screen and (min-width: 1200px)', 
+);
+@mixin respond-to($name) {
+    @media #{map-get($breakpoints, $name)} {
+        @content;
+    }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  &:hover, &:active, &:focus {
+    text-decoration: none;
+  }
+}
+
+.fb-post {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+  color: #595757;
+  line-height: 1.2;
+  padding: 4px 7.5px 0;
+
+  > * {
+    box-sizing: border-box;
+  }
+
+  &__item-wrap{
+    width: 100%;
+    padding: 0 7.5px;
+    margin-bottom: 15px;
+    @include respond-to(sm) {
+      width: 50%;
+    }
+    @include respond-to(md) {
+      width: 33.333%;
+    }
+  }
+
+  &__item {
+    display: block;
+    border: 1px solid #ddd;
+    border-bottom-width: 4px;
+    height: 100%;
+    background-color: #fff;
+
+    &:hover {
+      color: #9981b5;
+      .fb-post__hover {
+        opacity: 1;
+        transform: translate(-10px, 10px);
+      }
+    }
+  }
+
+  &__header {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+
+    img {
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+  }
+
+  &__name {
+    margin-bottom: 10px;
+  }
+  &__date {
+    font-size: 13px;
+  }
+
+  &__content {
+    position: relative;
+    // height: 220px;
+    padding: 10px 10px 30px;
+    font-size: 15px;
+  }
+
+  &__text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: 10px;
+  }
+
+  &__hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.9);
+    overflow: hidden;
+    padding: 15px;
+    line-height: 1.8;
+    color: #ddd;
+    opacity: 0;
+    transition: all .5s ease;
+  }
+
+  &__img {
+    width: 100%;
+  }
+}
+
+.ig-post {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -4px;
+  > * {
+    box-sizing: border-box;
+  }
+
+  &__item {
+    padding: 4px;
+    width: 33.333%;
+    
+    &:hover {
+      .ig-post__img {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__img-wrap {
+    overflow: hidden;
+  }
+
+  &__img {
+    height: 0;
+    padding-bottom: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: .3s all;
+  }
+}

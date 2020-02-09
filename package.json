@@ -1,23 +1,41 @@
 {
-  "name": "my-ig-widgets",
-  "devDependencies": {
-    "babel-polyfill": "^6.26.0",
-    "parcel": "^1.11.0",
-    "sass": "^1.16.1"
-  },
-  "keywords": [],
+  "name": "fb-ig-widgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "prestart": "rm -rf dist",
-    "start": "parcel index.html",
-    "prebuild": "rm -rf dist",
-    "build": "parcel build index.html",
-    "prestart:window": "if exist dist RMDIR dist /s /q && if exist mkdir dist /s /q",
-    "start:window": "parcel index.html",
-    "build:window": "npm run prestart:window && parcel build index.html"
+    "dev": "parcel src/index.html",
+    "prebuild": "del dist",
+    "build": "parcel build src/index.html",
+    "develop": "sh develop.sh",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "axios": "^0.18.0",
-    "axios-jsonp": "^1.0.2",
-    "vue": "^2.5.22"
+    "axios": "^0.19.2",
+    "parcel-bundler": "^1.12.4",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.7.4",
+    "sass": "^1.25.0",
+    "typescript": "^3.7.5"
+  },
+  "browserslist": [
+    ">1%",
+    "last 2 versions",
+    "not ie < 10"
+  ],
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {
+        "browsers": [
+          ">1%",
+          "last 2 versions",
+          "not ie < 10"
+        ]
+      }
+    }
   }
 }
