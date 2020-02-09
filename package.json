@@ -7,7 +7,6 @@
     "dev": "parcel src/index.html",
     "prebuild": "del dist",
     "build": "parcel build src/index.html",
-    "develop": "sh develop.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
